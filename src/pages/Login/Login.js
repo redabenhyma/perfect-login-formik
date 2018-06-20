@@ -1,7 +1,16 @@
 // @flow
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField/TextField';
-import { Button, IconButton, InputAdornment } from '@material-ui/core/index';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  IconButton,
+  InputAdornment,
+} from '@material-ui/core/index';
 import { Visibility, VisibilityOff } from '@material-ui/icons/index';
 
 import { Container } from './Login.style';
@@ -28,40 +37,55 @@ class Login extends Component {
   render() {
     return (
       <Container>
-        <form>
-          <TextField
-            autoFocus
-            fullWidth
-            id="login"
-            label="Login"
-            value={this.state.login}
-            onChange={this.handleChange('login')}
-          />
-          <TextField
-            fullWidth
-            id="password"
-            label="Password"
-            type={this.state.showPassword ? 'text' : 'password'}
-            value={this.state.password}
-            onChange={this.handleChange('password')}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="Toggle password visibility"
-                    onClick={this.handleClickShowPassword}
-                    onMouseDown={this.handleMouseDownPassword}
-                  >
-                    {this.state.showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-          <Button fullWidth variant="contained" color="primary">
-            Login
-          </Button>
-        </form>
+        <Grid container justify="center">
+          <Grid item>
+            <form>
+              <Card className="card-login">
+                <CardMedia
+                  className="card-media-login"
+                  image="https://www.maddyness.com/wp-content/uploads/2018/03/theodo-logo-924x462.jpg"
+                  title="Theodo"
+                />
+                <CardContent>
+                  <TextField
+                    autoFocus
+                    fullWidth
+                    id="login"
+                    label="Login"
+                    value={this.state.login}
+                    onChange={this.handleChange('login')}
+                  />
+                  <TextField
+                    fullWidth
+                    id="password"
+                    label="Password"
+                    type={this.state.showPassword ? 'text' : 'password'}
+                    value={this.state.password}
+                    onChange={this.handleChange('password')}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="Toggle password visibility"
+                            onClick={this.handleClickShowPassword}
+                            onMouseDown={this.handleMouseDownPassword}
+                          >
+                            {this.state.showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </CardContent>
+                <CardActions>
+                  <Button fullWidth variant="contained" color="primary">
+                    Login
+                  </Button>
+                </CardActions>
+              </Card>
+            </form>
+          </Grid>
+        </Grid>
       </Container>
     );
   }
