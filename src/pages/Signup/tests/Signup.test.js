@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Login from './Login';
+import Signup from './Signup';
 
 /*
 This file contains all unit tests. The standard is:
@@ -11,11 +11,10 @@ This file contains all unit tests. The standard is:
   - The test is testing one action only.
   - The test can fail.
 */
-describe('[Component] <Login />', () => {
+describe('[Component] <Signup />', () => {
   it('should be a test with an explicit name', () => {
-    const props = {
-    };
-    const wrapper = shallow(<Login {...props} />);
+    const props = {};
+    const wrapper = shallow(<Signup {...props} />);
     expect(wrapper.exists()).toEqual(true);
   });
 });

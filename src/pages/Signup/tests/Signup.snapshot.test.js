@@ -3,17 +3,16 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import Login from './Login';
+import Signup from './Signup';
 
 /*
 Snapshot tests allow you to easily lock the comportment of a component.
 Given props, it renders the component and compares it to the saved snapshot.
 */
-describe('[Snapshot] <Login />', () => {
+describe('[Snapshot] <Signup />', () => {
   it('should render a button with a label', () => {
-    const props = {
-    };
-    const wrapper = shallow(<Login {...props} />);
+    const props = {};
+    const wrapper = shallow(<Signup {...props} />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

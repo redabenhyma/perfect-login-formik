@@ -1,13 +1,13 @@
 // @flow
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Avatar, Home, Login } from './pages';
+import { Avatar, Home, Signup } from './pages';
 
 const routes = () => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/avatar" component={Avatar} />
-    <Route path="/login" component={Login} />
+    <Route path="/signup" component={Signup} />
   </Switch>
 );
 

@@ -13,9 +13,9 @@ import {
 } from '@material-ui/core/index';
 import { Visibility, VisibilityOff } from '@material-ui/icons/index';
 
-import { Container } from './Login.style';
+import { Container } from './Signup.style';
 
-class Login extends Component {
+class Signup extends Component {
   state = {
     login: '',
     password: '',
@@ -79,7 +79,7 @@ class Login extends Component {
                 </CardContent>
                 <CardActions>
                   <Button fullWidth variant="contained" color="primary">
-                    Login
+                    Sign Up
                   </Button>
                 </CardActions>
               </Card>
@@ -91,4 +91,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Signup;
