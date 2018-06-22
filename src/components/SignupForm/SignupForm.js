@@ -73,7 +73,13 @@ class SignupForm extends Component<Props> {
               />
             </CardContent>
             <CardActions>
-              <Button fullWidth variant="contained" color="primary">
+              <Button
+                type="submit"
+                disabled={this.props.isSubmitting}
+                fullWidth
+                variant="contained"
+                color="primary"
+              >
                 Sign Up
               </Button>
             </CardActions>
