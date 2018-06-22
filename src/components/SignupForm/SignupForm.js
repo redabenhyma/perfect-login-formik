@@ -18,13 +18,7 @@ type Props = {};
 
 class SignupForm extends Component<Props> {
   state = {
-    login: '',
-    password: '',
     showPassword: false,
-  };
-
-  handleChange = prop => event => {
-    this.setState({ [prop]: event.target.value });
   };
 
   handleClickShowPassword = () => {
@@ -38,7 +32,7 @@ class SignupForm extends Component<Props> {
   render() {
     return (
       <Container>
-        <form>
+        <form onSubmit={this.props.handleSubmit}>
           <Card className="card-login">
             <CardMedia
               className="card-media-login"
@@ -51,16 +45,18 @@ class SignupForm extends Component<Props> {
                 fullWidth
                 id="login"
                 label="Login"
-                value={this.state.login}
-                onChange={this.handleChange('login')}
+                value={this.props.values.login}
+                onChange={this.props.handleChange}
+                onBlur={this.props.handleBlur}
               />
               <TextField
                 fullWidth
                 id="password"
                 label="Password"
                 type={this.state.showPassword ? 'text' : 'password'}
-                value={this.state.password}
-                onChange={this.handleChange('password')}
+                value={this.props.values.password}
+                onChange={this.props.handleChange}
+                onBlur={this.props.handleBlur}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">

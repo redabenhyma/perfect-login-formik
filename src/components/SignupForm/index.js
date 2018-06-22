@@ -1,2 +1,2 @@
 // @flow
-export { default } from './SignupForm.wrap';
+export { default } from './SignupForm.wrap.js';

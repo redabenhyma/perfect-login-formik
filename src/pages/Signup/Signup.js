@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Grid } from '@material-ui/core/index';
 
 import { Container } from './Signup.style';
-import SignupForm from '../../components/SignupForm/SignupForm';
+import SignupForm from '../../components/SignupForm';
 
 class Signup extends Component {
   render() {
