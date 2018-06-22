@@ -43,9 +43,9 @@ class SignupForm extends Component<Props> {
               <TextField
                 autoFocus
                 fullWidth
-                id="login"
-                label="Login"
-                value={this.props.values.login}
+                id="email"
+                label="Email"
+                value={this.props.values.email}
                 onChange={this.props.handleChange}
                 onBlur={this.props.handleBlur}
               />
