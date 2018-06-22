@@ -30,6 +30,8 @@ class SignupForm extends Component<Props> {
   };
 
   render() {
+    const { values, touched, errors, handleChange, handleBlur, isSubmitting } = this.props;
+
     return (
       <Container>
         <form onSubmit={this.props.handleSubmit}>
@@ -45,18 +47,22 @@ class SignupForm extends Component<Props> {
                 fullWidth
                 id="email"
                 label="Email"
-                value={this.props.values.email}
-                onChange={this.props.handleChange}
-                onBlur={this.props.handleBlur}
+                value={values.email}
+                error={touched.email && errors.email}
+                helperText={touched.email && errors.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />
               <TextField
                 fullWidth
                 id="password"
                 label="Password"
                 type={this.state.showPassword ? 'text' : 'password'}
-                value={this.props.values.password}
-                onChange={this.props.handleChange}
-                onBlur={this.props.handleBlur}
+                value={values.password}
+                error={touched.password && errors.password}
+                helperText={touched.password && errors.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -75,7 +81,7 @@ class SignupForm extends Component<Props> {
             <CardActions>
               <Button
                 type="submit"
-                disabled={this.props.isSubmitting}
+                disabled={isSubmitting}
                 fullWidth
                 variant="contained"
                 color="primary"
