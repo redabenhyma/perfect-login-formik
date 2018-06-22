@@ -35,9 +35,9 @@ class SignupForm extends Component<Props> {
     return (
       <Container>
         <form onSubmit={this.props.handleSubmit}>
-          <Card className="card-login">
+          <Card className="card-signup">
             <CardMedia
-              className="card-media-login"
+              className="card-media-signup"
               image="https://www.maddyness.com/wp-content/uploads/2018/03/theodo-logo-924x462.jpg"
               title="Theodo"
             />
@@ -45,6 +45,7 @@ class SignupForm extends Component<Props> {
               <TextField
                 autoFocus
                 fullWidth
+                className="text-field-signup"
                 id="email"
                 label="Email"
                 value={values.email}
@@ -55,6 +56,7 @@ class SignupForm extends Component<Props> {
               />
               <TextField
                 fullWidth
+                className="text-field-signup"
                 id="password"
                 label="Password"
                 type={this.state.showPassword ? 'text' : 'password'}
