@@ -1,16 +1,15 @@
 // @flow
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField/TextField';
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  IconButton,
-  InputAdornment,
-} from '@material-ui/core/index';
-import { Visibility, VisibilityOff } from '@material-ui/icons/index';
+import CardMedia from '@material-ui/core/CardMedia/CardMedia';
+import Card from '@material-ui/core/Card/Card';
+import CardContent from '@material-ui/core/CardContent/CardContent';
+import InputAdornment from '@material-ui/core/InputAdornment/InputAdornment';
+import IconButton from '@material-ui/core/IconButton/IconButton';
+import CardActions from '@material-ui/core/CardActions/CardActions';
+import Button from '@material-ui/core/Button/Button';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import Visibility from '@material-ui/icons/Visibility';
 
 import { Container } from './SignupForm.style';
 
