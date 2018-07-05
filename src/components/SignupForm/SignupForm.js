@@ -10,6 +10,7 @@ import CardActions from '@material-ui/core/CardActions/CardActions';
 import Button from '@material-ui/core/Button/Button';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Visibility from '@material-ui/icons/Visibility';
+import LinearProgress from '@material-ui/core/LinearProgress/LinearProgress';
 
 import { Container } from './SignupForm.style';
 
@@ -90,6 +91,7 @@ class SignupForm extends Component<Props> {
                 Sign Up
               </Button>
             </CardActions>
+            {isSubmitting && <LinearProgress />}
           </Card>
         </form>
       </Container>
