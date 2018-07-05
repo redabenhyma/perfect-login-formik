@@ -14,9 +14,12 @@ export default withFormik({
       .min(8, 'Your password must contain a minimum of 8 characters')
       .required('Password is required!'),
   }),
-  handleSubmit: (values, { setSubmitting }) => {
+  handleSubmit: (values, { setSubmitting, setFieldError }) => {
+    // Backend Request
     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+      if (['stanislasb@theodo.fr', 'jonathanb@theodo.fr'].includes(values.email))
+        setFieldError('email', 'This email is already used!');
+      else alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
     }, 3000);
   },
