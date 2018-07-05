@@ -9,17 +9,7 @@ export default withFormik({
   validationSchema: Yup.object().shape({
     email: Yup.string()
       .email('Invalid email address.')
-      .required('Email is required!')
-      .test(
-        'already-used',
-        'This email is already used!!',
-        value =>
-          new Promise(resolve =>
-            setTimeout(() => {
-              resolve(!['stanislasb@theodo.fr', 'jonathanb@theodo.fr'].includes(value));
-            }, 3000),
-          ),
-      ),
+      .required('Email is required!'),
     password: Yup.string()
       .min(8, 'Your password must contain a minimum of 8 characters')
       .required('Password is required!'),
@@ -28,7 +18,7 @@ export default withFormik({
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
-    }, 1000);
+    }, 3000);
   },
   displayName: 'SignupForm', // helps with React DevTools
 })(SignupForm);
